@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .container {
+        width: 100%;
+        height: auto;
+
+    }
+
+    .mfrom {
+        width: 70%;
+        margin-left: 20px;
+    }
+
+    .date {
+        width: 160px;
+        padding: 12px 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 40px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block;
+    }
+
+    select {
+        width: 200px;
+        padding: 12px 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 40px;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .number {
+        width: 90px;
+        padding: 12px 0px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 20px;
+        margin-left: 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .currency {
+        width: 100px;
+        padding: 12px 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type=submit] {
+        width: 100px;
+        background-color: #a83c02;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+</head>
+
+<body>
+    <div class="container">
+        <form class="mfrom" action="https://jkorpela.fi/cgi-bin/echo.cgi">
+            <table>
+                <tr>
+                    <td>
+                        <label for="from">Flying from</label>
+                        <select name="from" id="from">
+                            <option value="bangkok">Bangkok</option>
+                            <option value="chiangmai">Chiang mai</option>
+                            <option value="chiangrai">Chiang rai</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="to">To</label>
+                        <select name="to" id="to">
+                            <option value="chiangrai">Chiang rai</option>
+                            <option value="chiangmai">Chiang mai</option>
+                            <option value="bangkok">Bangkok</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="departdate">Departing</label>
+                        <input class="date" type="date" id="departdate" name="departdate">
+                    </td>
+                    <td>
+                        <label for="returning">Returning</label>
+                        <input class="date" type="date" name="returning" id="returning">
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="numadult">Adult</label>
+                        <input class="number" type="number" name="numadult" id="numadult" min="1" max="20">
+                    </td>
+                    <td>
+                        <label for="numchild">Child</label>
+                        <input class="number" type="number" name="numchild" id="numchild" min="0" max="20">
+                    </td>
+                    <td>
+                        <label for="numinfant">Infant</label>
+                        <input class="number" type="number" name="numinfant" id="numinfant" min="0" max="20">
+                    </td>
+                    <td>
+                        <label for="currency">Currency</label>
+                        <select class="currency" name="currency" id="currency" required>
+                            <option value="pkr">PKR</option>
+                            <option value="thb">THB</option>
+                            <option value="us">US</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+            <input type="submit" value="SEARCH">
+
+        </form>
+    </div>
+</body>
+
+</html>
