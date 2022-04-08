@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #img {
+        background-image: url("https://campus.campus-star.com/app/uploads/2020/07/mugglethai01.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #film {
+        backdrop-filter: blur(3px);
+        background-color: rgba(106, 90, 205, 0.3);
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+
+    }
+
+    #title {
+        text-align: center;
+        padding-top: 320px;
+        font-size: 60px;
+        color: #ffffff;
+        text-decoration-line: overline underline;
+        text-decoration-color: #DFFF00;
+        /**--การใส่เงาให้กับข้อความ**/
+        text-shadow: black 0.1em 0.1em 0.2em; 
+    }
+    .menu{
+        text-align: right;
+        padding-top: 15px;
+    }
+
+    .menu ul li {
+
+        display: inline;
+        padding: 25px;
+        margin-right: 35px;
+        background-color: rgb(20, 9, 52);
+        border-radius: 8px;
+
+    }
+    .menu ul li a{      
+        padding: 25px;
+        color: #fff;
+        text-align: center;
+        font-size: 30px;
+        text-decoration: none;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+
+<body id="img">
+
+    <div id="film">    
+            <nav class="menu">
+                <ul>
+                    <li><a href="./profile.html" target="_blank">Profile</a></li>
+                    <li><a href="./friends.html" target="_blank">Friends</a></li>
+                </ul>
+            </nav>
+        <h1 id="title">Train yourself to be a workhard person!!</h1>
+
+    </div>
+
+</body>
+
+</html>
