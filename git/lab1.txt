@@ -2,4 +2,4 @@ git flow
 
 have conflict
 
-not have conflict
+<!--not have conflict-->
