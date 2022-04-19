@@ -3,3 +3,5 @@ git flow
 have conflict
 
 not have conflict
+
+git very hard
