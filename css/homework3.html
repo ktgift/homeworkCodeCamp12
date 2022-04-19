@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1036c14327.js" crossorigin="anonymous"></script>
+    <title>homework3 Facebook Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background: #fff;
+            color: #1c1e21;
+            /* direction: ltr; */
+            /* ใช้กำหนดทิศทางข้อวาม  ltr = ทิศทางเขียนเป็นจากขวาไปซ้าย */
+            /* unicode-bidi: embed; ใช้ร่วมกับ direction: ltr; */
+            line-height: 1.34;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .container {
+            background-color: #f0f2f5;
+            height: 120vh;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 80px;
+        }
+
+        .container>* {
+            flex: 1;
+        }
+
+        .main2 {
+            display: inline-block;
+            flex: 3 100px;
+            /* border: 1px solid lime; */
+            padding: 90px 0 16px;
+        }
+
+        .main3 {
+            flex: 2 80px;
+            /* border: 1px solid lime; */
+        }
+
+        .fb_logo {
+            width: 55%;
+            margin-left: -35px;
+            margin-bottom: -20px;
+        }
+
+        .title {
+            display: inline-block;
+            font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+            font-weight: normal;
+            font-size: 200%;
+            margin-right: 100px;
+            line-height: 1;
+            /* border: 1px solid lime; */
+        }
+
+        .title h2 {
+            display: inline-block;
+        }
+
+        .login {
+            border: none;
+            border-radius: 8px;
+            background-color: #FFF;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+            height: 350px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .fb_login {
+            text-align: center;
+
+        }
+
+        input[type=text] {
+            width: 90%;
+            padding: 12px 20px;
+            margin-top: 20px;
+            display: inline-block;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        input[type=password] {
+            width: 90%;
+            padding: 12px 20px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        input[type=submit] {
+            width: 90%;
+            padding: 10px 20px;
+            margin: 10px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background: #1877f2;
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        input:hover {
+            border-color: #1877f2;
+        }
+
+        .forgetpass {
+            text-align: center;
+            margin: 10px auto;
+            font-size: 16px;
+            font-weight: 500;
+            color: #1877f2;
+            text-decoration: none;
+        }
+
+        .b_create {
+            width: 50%;
+            padding: 10px 15px;
+            text-decoration: none;
+            border: 1px solid #42b72a;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background: #42b72a;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .page {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .page a {
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 16px;
+            color: black;
+        }
+
+        .page a:hover {
+            text-decoration: underline;
+        }
+
+        .languageList {
+            display: flex;
+            align-items: center;
+            /* flex-wrap: wrap; */
+            padding-top: 8px;
+
+        }
+
+        .pagefooter {
+            color: #737373;
+            margin: 0 auto;
+            width: 75vw;
+            /* border: 1px solid red; */
+        }
+
+        .pagefooter a {
+            text-decoration: none;
+            display: inline-block;
+            color: #737373;
+            padding: 0 5px;
+            flex-wrap: nowrap;
+            margin-left: -5px;
+            font-size: 15px;
+        }
+
+        .pagefooterlinklist {
+            line-height: 1.6;
+            /* width: 120ch; */
+        }
+
+        .pagefooterlinklist a {
+            padding: 0 10px;
+            margin-left: -10px;
+        }
+
+        .pagefooterlinklist ul li {
+            list-style-type: none;
+            padding: 0;
+            display: inline-block;
+        }
+
+        /* for use div make a line*/
+        .curve {
+            border-bottom: 1px solid #dddfe2;
+            font-size: 3px;
+            height: 8px;
+            margin-bottom: 8px;
+        }
+
+        .curve2 {
+            border-bottom: 1px solid #dddfe2;
+            width: 90%;
+            font-size: 3px;
+            height: 8px;
+            margin: 10px auto 35px auto;
+        }
+
+        .meta {
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 1108px) {
+            .pagefooter a {
+                font-size: 80%;
+            }
+        }
+
+        @media (max-width: 912px) {
+            .container {
+                background-color: #fff;
+                height: 40vh;
+                padding-top: 80px;
+                /* border: 1px solid red; */
+                flex-flow: column;
+            }
+
+            .container>* {
+                flex: 0;
+            }
+
+            .main2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .main3 {
+                flex: 2 80px;
+                /* border: 1px solid lime; */
+            }
+
+            .fb_logo {
+                width: 100px;
+                display: block;
+                justify-content: center;
+                align-items: center;
+                margin-top: -300px;
+                margin-left: 0px;
+                margin-bottom: 0px;
+                /* border: 1px solid rgb(89, 81, 233); */
+            }
+
+            .title {
+                display: block;
+                font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+                font-size: 0;
+                margin-right: 0px;
+                line-height: 0;
+                color: #fff;
+                /* border: 1px solid lime; */
+            }
+
+            .title h2 {
+                display: block;
+            }
+
+            .login {
+                border: none;
+                border-radius: 8px;
+                background-color: #FFF;
+                height: auto;
+                /* margin-top: 60px; */
+                text-align: center;
+                box-shadow: none;
+                margin-top: -130px;
+
+            }
+
+            .fb_login {
+                text-align: center;
+            }
+
+            input[type=text] {
+                width: 90%;
+                padding: 12px 20px;
+                margin-top: 0px;
+                display: inline-block;
+                background: #f5f6f7;
+                box-shadow: 0 1px 1px rgb(0 0 0 / 25%), 0 -0.5px 1px rgb(0 0 0 / 10%);
+                border: none;
+                border-radius: 6px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+
+            input[type=password] {
+                width: 90%;
+                padding: 12px 20px;
+                margin: 10px 0;
+                display: inline-block;
+                background: #f5f6f7;
+                box-shadow: 0 1px 1px rgb(0 0 0 / 25%), 0 -0.5px 1px rgb(0 0 0 / 10%);
+                border: none;
+                border-radius: 6px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+
+            input[type=submit] {
+                width: 90%;
+                padding: 10px 20px;
+                margin: 10px 0;
+                display: inline-block;
+                border: none;
+                border-radius: 6px;
+                box-sizing: border-box;
+                background: #1877f2;
+                font-size: 18px;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+            }
+
+            .forgetpass {
+                text-align: center;
+                margin: 10px auto;
+                font-size: 13px;
+                font-weight: 500;
+                color: #1877f2;
+                text-decoration: none;
+            }
+
+            .b_create {
+                padding: 10px 10px;
+                text-decoration: none;
+                border: none;
+                border-radius: 6px;
+                box-sizing: border-box;
+                background: #00a400;
+                font-size: 14px;
+                font-weight: bold;
+                color: #fff;
+            }
+
+            .curve2 {
+                border-bottom: 1px solid #dddfe2;
+                width: 90%;
+                font-size: 3px;
+                height: 8px;
+                margin: 10px auto 35px auto;
+            }
+
+            .page {
+                margin-top: 0px;
+                font-size: 0;
+            }
+
+            .page a {
+                font-size: 0;
+            }
+
+            .languageList {
+                display: inline-block;
+                align-items: center;
+                padding-top: 8px;
+                text-align: center;
+                /* border: 1px solid pink; */
+                width: 100vw;
+                margin-top: 25%;
+
+            }
+
+            footer {
+                display: inline;
+            }
+
+            .pagefooter {
+                color: #737373;
+                margin: 0 auto;
+                width: 75vw;
+                display: inline-block;
+            }
+
+            .pagefooterlinklist {
+                line-height: 0;
+            }
+
+            .pagefooterlinklist a {
+                padding: 0 10px;
+                margin-left: 0px;
+                color: #fff;
+                text-align: center;
+            }
+
+            .pagefooterlinklist ul li {
+                list-style-type: none;
+                padding: 0;
+                display: inline-block;
+            }
+
+            .curve {
+                border-bottom: none;
+                font-size: 03px;
+                height: 0px;
+                margin-bottom: 0px;
+            }
+
+            .meta {
+                margin-top: 15px;
+                font-size: 13px;
+                color: #fff;
+            }
+
+
+
+
+
+
+
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="main1"></div>
+        <div class="main2">
+            <img class="fb_logo" src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Facebook">
+            <h2 class="title">Facebook ช่วยคุณเชื่อมต่อและแชร์กับผู้คนมากมายรอบตัวคุณ</h2>
+        </div>
+        <div class="main3">
+
+            <div class="login">
+                <div class="fb_login">
+                    <form action="">
+                        <input type="text" id="user" placeholder="อีเมลหรือหมายเลขโทรศัพท์มือถือ">
+                        <input type="password" id="user" placeholder="รหัสผ่าน">
+                        <input type="submit" value="เข้าสู่ระบบ">
+                    </form>
+                </div>
+                <div class="forgetpass">
+                    <a class="forgetpass"
+                        href="https://th-th.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0"
+                        target="_blank">ลืมรหัสผ่านใช่หรือไม่</a>
+                </div>
+                <div class="curve2"></div>
+                <div class="forgetpass">
+                    <a class="b_create" href="https://th-th.facebook.com/#">สร้างบัญชีใหม่</a>
+                </div>
+            </div>
+
+            <div class="page">
+                <a href="https://th-th.facebook.com/pages/create/?ref_type=registration_form">สร้างเพจ</a> สำหรับคนดัง
+                แบรนด์ หรือธุรกิจ
+            </div>
+
+        </div>
+        <div class="main4"></div>
+
+
+    </div>
+
+
+
+
+    <footer>
+        <div class="languageList">
+            <div class="pagefooter">
+                <a href="https://th-th.facebook.com/">ภาษาไทย</a>
+                <a href="https://en-gb.facebook.com/">English (UK)</a>
+                <a href="https://ja-jp.facebook.com/">日本語</a>
+                <a href="https://zh-cn.facebook.com/">中文(简体)</a>
+                <a href="https://vi-vn.facebook.com/">Tiếng Việt</a>
+                <a href="https://fr-fr.facebook.com/">Français (France)</a>
+                <a href="https://de-de.facebook.com/">Deutsch</a>
+                <a href="https://ru-ru.facebook.com/">Русский</a>
+                <a href="https://es-la.facebook.com/">Español</a>
+                <a href="https://pt-br.facebook.com/">Português (Brasil)</a>
+                <a href="https://it-it.facebook.com/">Italiano</a>
+                <a href="#" title="Show more languages">
+                    <i class='far fa-plus-square' style="font-size: 18px;"></i>
+                </a>
+                <div class="curve"></div>
+                <div class="pagefooterlinklist">
+                    <ul>
+                        <li><a href="https://th-th.facebook.com/reg/">สมัคร</a></li>
+                        <li><a href="https://th-th.facebook.com/login/">เข้าสู่ระบบ</a></li>
+                        <li><a href="https://messenger.com/">Messenger</a></li>
+                        <li><a href="https://th-th.facebook.com/lite/">Facebook Lite</a></li>
+                        <li><a href="https://th-th.facebook.com/watch/">Watch</a></li>
+                        <li><a href="https://th-th.facebook.com/places/">สถานที่</a></li>
+                        <li><a href="https://th-th.facebook.com/games/">เกม</a></li>
+                        <li><a href="https://www.facebook.com/marketplace/">Marketplace</a></li>
+                        <li><a href="https://pay.facebook.com/" target="_blank">Facebook Pay</a></li>
+                        <li><a href="https://www.oculus.com/" target="_blank">Oculus</a></li>
+                        <li><a href="https://portal.facebook.com/" target="_blank">Portal</a></li>
+                        <li><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&amp;h=AT14eW9KH8j2J5Gx2DhvHPMzxgJzRv9Tt2vk3QAZvXh58242ii11C27DID0Fpln9smLfMLdryc2QXWuzonRa2aX7Uze5_ViYerI-yvnk5QYNp1NbyBHYWiHQFRhHV_FolvprBqZgm7SWjoNyVRT2Co7-SfXMdM2HINl-Nw"
+                                target="_blank">Instagram</a></li>
+                        <li><a href="https://www.bulletin.com/">Bulletin</a></li>
+                        <li><a href="https://www.facebook.com/local/lists/245019872666104/">ในพื้นที่</a></li>
+                        <li><a href="https://th-th.facebook.com/fundraisers/">โครงการระดมทุน</a></li>
+                        <li><a href="https://th-th.facebook.com/biz/directory/">บริการ</a></li>
+                        <li><a href="https://th-th.facebook.com/votinginformationcenter/">ศูนย์ข้อมูลการลงคะแนนเสียง</a>
+                        </li>
+                        <li><a href="https://th-th.facebook.com/groups/explore/">กลุ่ม</a></li>
+                        <li><a href="https://about.facebook.com/" accesskey="8"
+                                title="อ่านเว็บบล็อกของเรา สำรวจศูนย์รวมแหล่งข้อมูล และค้นหาโอกาสในการจ้างงาน">เกี่ยวกับ</a>
+                        </li>
+                        <li><a
+                                href="https://www.facebook.com/adsmanager/manage/campaigns?act=317003985513276&nav_entry_point=lep_174">สร้างโฆษณา</a>
+                        </li>
+                        <li><a href="https://www.facebook.com/pages/create/?ref_type=site_footer">สร้างเพจ</a></li>
+                        <li><a href="https://developers.facebook.com/?ref=pf">ผู้พัฒนา</a></li>
+                        <li><a href="https://www.metacareers.com/">ร่วมงานกับ Facebook</a></li>
+                        <li><a href="https://th-th.facebook.com/privacy/explanation/">ความเป็นส่วนตัว</a></li>
+                        <li><a href="https://th-th.facebook.com/policies/cookies/">คุกกี้</a></li>
+                        <li><a href="https://www.facebook.com/help/568137493302217">ตัวเลือกโฆษณา</a></li>
+                        <li><a href="https://th-th.facebook.com/policies_center/">เงื่อนไข</a></li>
+                        <li><a href="https://th-th.facebook.com/help/?ref=pf">ความช่วยเหลือ</a></li>
+                    </ul>
+                </div>
+                <div class="meta">
+                    <span> Meta © 2022</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
