@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Lab2_2</title>  
+    </head>
+    <body>
+        <div id="root"></div>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <!-- Load Babel -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            const height = 157;
+            const weight = 46;
+
+            const calaBMI = ((height, weight) => {
+                const bmi = weight / (( height / 100 ) ** 2);
+                return  bmi.toFixed(2)
+            })
+
+            const div = (
+                <div>
+                    <h1>ค่า BMI = {calaBMI(height, weight)}</h1>
+                </div>
+            );
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(div);
+        </script>
+    </body>
+</html>
