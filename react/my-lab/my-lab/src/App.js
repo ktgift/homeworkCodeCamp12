@@ -1,23 +1,14 @@
+
 function App() {
   return (
-    <div>
-      <label forHtml="province">Province : </label>
-        <select name="province" id="province">
-          <option value="bangkok">bangkok</option>
-          <option value="nakhonsawan">nakhonsawan</option>
-        <option value="phichit">phichit</option>
-      </select>
-
-          <label forHtml="district">District : </label>
-          <select name="district" id="district">
-            <option value="bangna">เขตบางนา</option>
-            <option value="bangrak">เขตบางรัก</option>
-            <option value="banksue">เขตบางซื่อ</option>
-          </select>   
+    <div style={{margin: "20px"}}>
+     <button>+</button>
+     <span>0</span>
+     <button>-</button>
+     <button type='reset'>Reset</button>
     </div>
   );
 }
 
 
 export default App;
-
