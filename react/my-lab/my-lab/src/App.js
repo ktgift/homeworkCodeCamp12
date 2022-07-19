@@ -1,36 +1,36 @@
 function App() {
   return (
     <>
-    {/* inline  */}
-    <div>
-        <button style={{ display: "block" }}>Add</button>
-        <div style={{ display: "block" }}>
-          <del style={{ marginTop: '10px', marginRight: '10px', color: 'green' }}>Task 1</del>
-          <button style={{ marginTop: '10px', marginRight: '10px' }}>Edit</button>
-          <button>Del</button>
+      <div className="titleBar center">
+          <button className="buttonStart">New Game</button>
+      </div>
+      <div className="flex-container">
+        <div className="pink">
+          <h2>PLAYER 1</h2>
+          <p style={{ fontSize: '40px', marginTop: '25%' }}>0</p>
         </div>
-        <div style={{ display: "block" }}>
-          <span style={{ marginTop: '10px', marginRight: '10px' }}>Task 2</span>
-          <button style={{ marginTop: '10px', marginRight: '10px' }}>Edit</button>
-          <button>Del</button>
-        </div>
-    </div>
+        <div className="border">
+          <div>
+            <button className="roll">Roll</button>
+            <button className="keep">Keep</button>
+          </div>
 
-    {/* external */}
-    <div>
-        <button>Add</button>
-        <div classNamr="div">
-          <span className="buttoms text">Task 1</span>
-          <button className="buttoms">Edit</button>
-          <button>Del</button>
+          <div className="container">
+            <div className="div border box">
+              <p>1</p>
+            </div>
+          </div>
+          <p style={{ marginTop: '45%' }}>Round Score : 0</p>
         </div>
-        <div classNamr="div">
-          <span className="buttoms">Task 2</span>
-          <button className="buttoms">Edit</button>
-          <button>Del</button>
+
+        <div className="border">
+          <h2>PLAYER 2</h2>
+          <p style={{ fontSize: '40px', marginTop: '25%' }}>0</p>
         </div>
-    </div>
-  </>
+      </div>
+      
+
+    </>
   );
 }
 

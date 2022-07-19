@@ -12,17 +12,98 @@ code {
     monospace;
 }
 
-.buttoms {
-  margin-right: 10px;
+p {
+  font-size: 22px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container .div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.box {
+  width: 80px;
+  height: 80px;
+  color: white;
+  background-color: rgb(65, 65, 66);
+  text-align: center;
+  margin-top: 20%;
+}
+
+.flex-container {
+  display: flex;
+  background-color: rgb(231, 231, 232);
+  height: 100vh;
+  text-align: center;
+}
+
+.flex-container > div {
+  margin: 10px;
+  width: 33%;
+  height: 50%;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+
+
+.center {
+  text-align: center;
+}
+
+.titleBar {
+  background-color: rgb(65, 65, 66);
+  width: 100%;
+  height: 50px;
+}
+
+.buttonStart {
+  border: none;
+  border-radius: 3px;
+  background-color: whitesmoke;
+  font-size: 14px;
+  padding: 5px;
+  text-align: center;
   margin-top: 10px;
-
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.div {
-  display: block;
+.roll {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px 32px;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(250, 84, 84);
+  font-weight: bolder;
 }
 
-.text {
-  text-decoration: line-through;
-  color: green;
+.keep {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px 32px;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(71, 221, 128);
+  font-weight: bolder;
+}
+
+.pink {
+  color: rgb(212, 34, 93);
+  background-color: rgb(255, 167, 196);
+  border: 1px solid rgb(212, 34, 93);
 }
