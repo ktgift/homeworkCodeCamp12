@@ -14,9 +14,15 @@ code {
 
 .buttoms {
   margin-right: 10px;
+  margin-top: 10px;
+
 }
 
 .div {
-  text-align: center;
-  margin-top: 30rem;
+  display: block;
+}
+
+.text {
+  text-decoration: line-through;
+  color: green;
 }
