@@ -1,10 +1,12 @@
 function App() {
   return (
-   <input 
-    className="position"
-    placeholder="Enter your message"  
-    onChange={(event) => console.log(event.target.value)} 
-  />
+    <select name='country' id='country' onClick={(event) => console.log(event.target.value)}>
+      <option value={'thailand'}>Thailand</option>
+      <option value={'england'}>England</option>
+      <option value={'USA'}>USA</option>
+      <option value={'cannada'}>Cannada</option>   
+      <option value={'lao'}>Lao</option>   
+    </select>
   );
 }
 
