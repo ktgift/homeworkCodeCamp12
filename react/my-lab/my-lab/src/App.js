@@ -1,13 +1,43 @@
 function App() {
+  const handleSelectPhoneBand = (event) => {
+    console.log('name: ' + event.target.name);
+    console.log('value: ' + event.target.value);
+    if(event.target.checked === true) {
+      console.log('checkbox: tick')
+    } else {
+      console.log('checkbox: untick')
+    }
+  }
   return (
-    <select name='country' id='country' onClick={(event) => console.log(event.target.value)}>
-      <option value={'thailand'}>Thailand</option>
-      <option value={'england'}>England</option>
-      <option value={'USA'}>USA</option>
-      <option value={'cannada'}>Cannada</option>   
-      <option value={'lao'}>Lao</option>   
-    </select>
-  );
+    <div style={{ marginTop: '20px', marginLeft: '20px', fontSize: '20px'}}>
+        <input 
+          type="checkbox" 
+          id="apple" 
+          name="apple" 
+          value="apple" 
+          onClick={handleSelectPhoneBand}
+        />
+        <label htmlFor="apple">Apple</label><br/>
+
+        <input 
+          type="checkbox" 
+          id="samsung" 
+          name="samsung" 
+          value="samsung"
+          onClick={handleSelectPhoneBand}
+        />
+        <label htmlFor="samsung">Samsung</label><br/>
+
+        <input 
+          type="checkbox" 
+          id="oppo"  
+          name="oppo" 
+          value="oppo" 
+          onClick={handleSelectPhoneBand}
+        />
+        <label htmlFor="oppo">Oppo</label><br/>
+    </div>
+  )
 }
 
 export default App;
