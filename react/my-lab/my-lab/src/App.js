@@ -1,42 +1,19 @@
 function App() {
-  const handleSelectPhoneBand = (event) => {
-    console.log('name: ' + event.target.name);
-    console.log('value: ' + event.target.value);
-    if(event.target.checked === true) {
-      console.log('checkbox: tick')
-    } else {
-      console.log('checkbox: untick')
+  const handleClick = (event) => {
+    event.preventDefault();
+    const response = window.confirm('Leave for Google ?');
+    if(response) {
+      window.location.assign('https://google.com')
     }
   }
+
   return (
-    <div style={{ marginTop: '20px', marginLeft: '20px', fontSize: '20px'}}>
-        <input 
-          type="checkbox" 
-          id="apple" 
-          name="apple" 
-          value="apple" 
-          onClick={handleSelectPhoneBand}
-        />
-        <label htmlFor="apple">Apple</label><br/>
-
-        <input 
-          type="checkbox" 
-          id="samsung" 
-          name="samsung" 
-          value="samsung"
-          onClick={handleSelectPhoneBand}
-        />
-        <label htmlFor="samsung">Samsung</label><br/>
-
-        <input 
-          type="checkbox" 
-          id="oppo"  
-          name="oppo" 
-          value="oppo" 
-          onClick={handleSelectPhoneBand}
-        />
-        <label htmlFor="oppo">Oppo</label><br/>
+    <div style={{ margit: '30px', fontSize: 40 }}>
+      <a href="https://google.com" onClick={handleClick}>
+        Google
+      </a>
     </div>
+
   )
 }
 
