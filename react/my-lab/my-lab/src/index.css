@@ -16,3 +16,9 @@ code {
   margin-top: 20px;
   margin-left: 20px;
 }
+
+.error{
+  border-color: red;
+  color: red;
+  margin-top: 0.5px;
+}
