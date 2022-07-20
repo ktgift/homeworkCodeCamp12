@@ -1,62 +1,30 @@
 import { useState } from 'react'
 
-const provinces = ['Bangkok', 'Tak', 'Nakhonsawan'];
-const districtObject = {
-  'BANGKOK': ['Pathuwan', 'Ratchathewi'],
-  'TAK': ['MueangTak', 'Maesot'],
-  'NAKHONSAWAN': ['Maewong', 'Latyao']
-}
-const subDistrictsObject = {
-  'PATHUMWAN': ['Pathumwan', 'Rongmuang', 'Wangmai'],
-  'RATCHATHEWI': ['Thanonphetcahburi', 'Thanonphuthai'],
-  'MUEANGTAK': ['Mai Ngam', 'Nong Bua Tai' ],
-  'MAESOT': ['Mae Tan'],
-  'MAEWONG': ['Khonchonkan', 'Mae ra'],
-  'LATYAO': ['Latyao', 'Wang san']
-}
 
 function App() {
-  const [selectedProvince, setSelectedProvince] = useState('BANGKOK')
-  const [selectedDirtrict, setSelectedDirtrict] = useState('PATHUMWAN')
+  const [posts, setPosts] = useState([
+    {id: 1, message: 'Good', date: '12-12-2022', sender: 'Jack'},
+    {id: 2, message: 'Very Good', date: '05-05-2022', sender: 'M'},
+    {id: 3, message: 'Great', date: '12-02-2022', sender: 'Koy'},
+    {id: 4, message: 'gooooooood', date: '07-12-2022', sender: 'Ground'},
+    {id: 5, message: 'Happy', date: '01-12-2022', sender: 'Gift'},
+  ]);
 
-  const optionProvinces = provinces.map(el => (
-    <option value={el.toUpperCase()}>{el}</option>
-  ))
-
-  const optionDistricts = districtObject[selectedProvince].map(el => (
-    <option value={el.toUpperCase()}>{el}</option>
-    
-  ))
-
-  const optionSubDistrict = subDistrictsObject[selectedDirtrict].map(el => (
-    <option value={el.toUpperCase()}>{el}</option>
-  ))
+  const lists = posts.map((el) => 
+    <li key={el.id}>
+      <span style={{color: 'red'}}>Comment: </span>{el.message + " "} 
+      <span style={{color: 'red'}}>Date: </span>{el.date + " "}
+      <span style={{color: 'red'}}>Sender: </span>{el.sender + " "}
+    </li>)
 
   return (
     <div style={{ margin: '3rem' }}>
-     <div style={{ marginBottom: '0.5rem'}}>
-      <label>Province: </label>
-      <select onChange={event => {
-        setSelectedProvince(event.target.value)
-        console.log(event.target.value)
-        }}>
-        {optionProvinces}
-      </select>
+      <ul>
+        {lists}
+      </ul>
      </div>
 
-     <div style={{ marginBottom: '0.5rem'}}>
-      <label>District: </label>
-      <select onChange={event => {
-        setSelectedDirtrict(event.target.value)
-        console.log(event.target.value)
-        }}>{optionDistricts}</select>
-     </div>
      
-     <div style={{ marginBottom: '0.5rem'}}>
-      <label>Sub District: </label>
-      <select>{optionSubDistrict}</select>
-     </div>
-    </div>
   );
   }
 
