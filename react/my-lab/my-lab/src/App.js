@@ -1,41 +1,63 @@
 import { useState } from 'react'
 
+const provinces = ['Bangkok', 'Tak', 'Nakhonsawan'];
+const districtObject = {
+  'BANGKOK': ['Pathuwan', 'Ratchathewi'],
+  'TAK': ['MueangTak', 'Maesot'],
+  'NAKHONSAWAN': ['Maewong', 'Latyao']
+}
+const subDistrictsObject = {
+  'PATHUMWAN': ['Pathumwan', 'Rongmuang', 'Wangmai'],
+  'RATCHATHEWI': ['Thanonphetcahburi', 'Thanonphuthai'],
+  'MUEANGTAK': ['Mai Ngam', 'Nong Bua Tai' ],
+  'MAESOT': ['Mae Tan'],
+  'MAEWONG': ['Khonchonkan', 'Mae ra'],
+  'LATYAO': ['Latyao', 'Wang san']
+}
+
 function App() {
-  const [number, setNumber] = useState('');
-  const [showError, setShowError] = useState('');
+  const [selectedProvince, setSelectedProvince] = useState('BANGKOK')
+  const [selectedDirtrict, setSelectedDirtrict] = useState('PATHUMWAN')
 
-  const handleNumberChange = event => {
-    setNumber(event.target.value);
-  }
+  const optionProvinces = provinces.map(el => (
+    <option value={el.toUpperCase()}>{el}</option>
+  ))
 
-  const handleClickCheck = () => {
-    if (number === '') {
-      setShowError('Phone Number is required')
-    } else if (number.length !== 10) {
-      setShowError('Invalid length')
-    } else if (number.match("^[0-9]*$")) {
-      setShowError('')
-      alert('Your number is valid')
-    } else {
-      setShowError('Phone Number is invalid')
-    }
-  }
+  const optionDistricts = districtObject[selectedProvince].map(el => (
+    <option value={el.toUpperCase()}>{el}</option>
+    
+  ))
+
+  const optionSubDistrict = subDistrictsObject[selectedDirtrict].map(el => (
+    <option value={el.toUpperCase()}>{el}</option>
+  ))
 
   return (
-    <div style={{ margin: '30px' }}>
-      <input 
-        id="inputNumber" 
-        placeholder="Phone Number"
-        className={showError === '' ? '' : 'error'}
-        value={number}
-        onChange={handleNumberChange} />
-      
-      <button onClick={handleClickCheck}>Check</button>
+    <div style={{ margin: '3rem' }}>
+     <div style={{ marginBottom: '0.5rem'}}>
+      <label>Province: </label>
+      <select onChange={event => {
+        setSelectedProvince(event.target.value)
+        console.log(event.target.value)
+        }}>
+        {optionProvinces}
+      </select>
+     </div>
 
-      {showError === '' ? null : <p className='error'>{showError}</p>}
+     <div style={{ marginBottom: '0.5rem'}}>
+      <label>District: </label>
+      <select onChange={event => {
+        setSelectedDirtrict(event.target.value)
+        console.log(event.target.value)
+        }}>{optionDistricts}</select>
+     </div>
+     
+     <div style={{ marginBottom: '0.5rem'}}>
+      <label>Sub District: </label>
+      <select>{optionSubDistrict}</select>
+     </div>
     </div>
-
-  )
-}
+  );
+  }
 
 export default App;
