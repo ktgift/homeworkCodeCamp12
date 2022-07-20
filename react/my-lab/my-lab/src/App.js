@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
 function App() {
-  const [showText, setShowText] = useState(true);
+  const [state, setState] = useState(0);
 
   return (
     <div style={{ margin: '30px' }}>
-      <button onClick={() => {setShowText(!showText)}}>
-      {showText === true ? 'Hide' : 'Show'}</button>
+      <label htmlFor='inputNumber'>Enter Dollar: </label>
+      <input id="inputNumber" onChange={(event) => setState(event.target.value * 30)} />
 
-      {showText && <h1>Text</h1>}
+      <p>Convert to Bath: {state}</p>
     </div>
 
   )
