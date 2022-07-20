@@ -6,9 +6,9 @@ function App() {
   return (
     <div style={{ margin: '30px' }}>
       <button onClick={() => {setShowText(!showText)}}>
-      Click to hide text</button>
-      {showText && <h1>Text</h1>}
+      {showText === true ? 'Hide' : 'Show'}</button>
 
+      {showText && <h1>Text</h1>}
     </div>
 
   )
